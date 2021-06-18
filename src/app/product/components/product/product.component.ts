@@ -22,9 +22,11 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   today = new Date();
 
+
   constructor(
     private cartService: CartService
   ) {
+
     console.log('1. constructor');
   }
 

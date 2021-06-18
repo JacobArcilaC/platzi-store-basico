@@ -10,7 +10,7 @@ export class CartService {
   private products : Product[] = [];
   private cart = new BehaviorSubject<Product[]>([]);
 
-  cart$;
+  cart$ = this.cart.asObservable();;
 
   constructor() {
     this.cart$ = this.cart.asObservable(); 

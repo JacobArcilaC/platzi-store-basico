@@ -9,8 +9,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { SharedModule } from './shared/shared.module';
-import { CoreModule } from './core/core.module';
+import { SharedModule } from '@shared/shared.module';
+import { CoreModule } from '@core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

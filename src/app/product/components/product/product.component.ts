@@ -7,8 +7,8 @@ import {
   OnDestroy
 } from '@angular/core';
 
-import { Product } from '../../../core/models/product.model';
-import {CartService} from '../../../core/services/cart.service';
+import { Product } from '@core/models/product.model';
+import {CartService} from '@core/services/cart.service';
 
 @Component({
   selector: 'app-product',

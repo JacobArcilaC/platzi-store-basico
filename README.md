@@ -1,8 +1,4 @@
-# Platzi Store Basico
+# Platzi Store Profesional
 
-Proyecto generado para el curso de Angular Basico (8.3.0).
-
-## Adicionales
-
-- Se configuro el proyecto para usar electron (Angular Desktop App).
+Modificaciones realizadas para el curso de Angular Profesional
 

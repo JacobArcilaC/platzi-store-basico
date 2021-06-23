@@ -11,7 +11,7 @@ import {CartService} from '../../../core/services/cart.service';
 })
 export class HeaderComponent implements OnInit {
 
-  total$: Observable<number>;
+  total$: Observable<string>;
 
   constructor(
     private cartService: CartService
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
     this.total$ = this.cartService.cart$
     .pipe(
-      map(products => products.length)
+      map(products => products.length.toString())
     );
     
   }

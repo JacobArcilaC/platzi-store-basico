@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 export class FormProductComponent implements OnInit {
 
   form: FormGroup;
-  image: String;
+  image: string;
 
   constructor(
     private formBuilder: FormBuilder,

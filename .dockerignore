@@ -1,0 +1,9 @@
+.dockerignore
+.editorconfig
+.git
+.gitignore
+e2e
+Dockerfile
+node_modules
+coverage
+README.md

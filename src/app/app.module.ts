@@ -13,6 +13,16 @@ import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import * as Sentry from "@sentry/browser";
+
+Sentry.init({
+  dsn: "https://6e6b3b039cb64c5ba4a09a7e8dbc9b89@o879583.ingest.sentry.io/5832336",
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
+
 @NgModule({
   declarations: [
     AppComponent,

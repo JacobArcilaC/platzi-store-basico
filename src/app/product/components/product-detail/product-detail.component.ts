@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { ProductsService } from '@core/services/products/products.service';
 import { Product } from '@core/models/product.model';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
@@ -12,7 +13,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: Product;
+  product$: Observable<Product>;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,16 +21,10 @@ export class ProductDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
-      const id = params.id;
-      this.fetchProduct(id);
-    });
-  }
-
-  fetchProduct(id: string) {
-    this.productsService.getProduct(id).subscribe(product => {
-      this.product = product;
-    });
+    this.product$ = this.route.params
+    .pipe(switchMap((params: Params) => {
+      return this.productsService.getProduct(params.id)
+    }))
   }
 
   createProduct() {
@@ -48,22 +43,31 @@ export class ProductDetailComponent implements OnInit {
 
   updateProduct() {
     const updateProduct: Partial<Product> = {
-      title: 'nuevo desde angular',
-      image: 'assets/images/mug.png',
-      price: 3000,
-      description: 'producto modificado'
+      price: 555555,
+      description: 'edicion titulo'
     };
-    this.productsService.updateProduct(this.product.id, updateProduct)
-    .subscribe(product => {
-      this.product = product;
-    });
+    this.product$ = this.product$.pipe(switchMap(product => {
+      return this.productsService.updateProduct(product.id, updateProduct)
+    }));
   }
 
   deleteProduct() {
-    this.productsService.deleteProduct(this.product.id)
-    .subscribe(rta => {
-        console.log(rta);
+    this.product$.pipe(switchMap(product => {
+      return this.productsService.deleteProduct(product.id)
+    })).subscribe(rta => {
+      console.log(rta);
     });
+  }
+
+  getRandomUsers(){
+    this.productsService.getRandomUsers()
+    .subscribe(users => {
+        console.log(users)
+      },
+      error => {
+        console.error(error)
+      }
+    );
   }
 
 }

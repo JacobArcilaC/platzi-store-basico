@@ -13,6 +13,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 import * as Sentry from "@sentry/browser";
 import { AuthInterceptor } from './auth.intecerptor';
@@ -41,6 +42,7 @@ Sentry.init({
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireStorageModule,
+    QuicklinkModule,
   ],
   providers: [
     {

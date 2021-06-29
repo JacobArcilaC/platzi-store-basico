@@ -7,7 +7,7 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
-
+import { QuicklinkModule } from 'ngx-quicklink';
 import { MaterialModule } from '@material/material.module';
 
 @NgModule({
@@ -28,7 +28,8 @@ import { MaterialModule } from '@material/material.module';
     CommonModule,
     RouterModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QuicklinkModule
   ]
 })
 export class SharedModule { }

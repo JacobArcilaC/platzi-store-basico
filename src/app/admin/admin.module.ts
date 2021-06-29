@@ -13,6 +13,8 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { SharedModule } from '@shared/shared.module';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { PdfComponent } from './components/pdf/pdf.component';
+import { DatesComponent } from './components/dates/dates.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     DashboardComponent,
     ProductsListComponent,
     FormProductComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    PdfComponent,
+    DatesComponent
   ],
   imports: [
     CommonModule,

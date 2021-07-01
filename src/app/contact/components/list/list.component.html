@@ -8,7 +8,7 @@
            {{employee.label}}
         </h3>
         <mat-chip-list>
-            <div class="chip">{{calcFibo(employee)}}</div>
+            <div class="chip">{{employee.num | fibonacci}}</div>
         </mat-chip-list>
         <button mat-raised-button color="warn">
             <mat-icon onclick="addItem()">delete</mat-icon>

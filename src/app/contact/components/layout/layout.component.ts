@@ -4,6 +4,7 @@ import { GeneratorService } from '@core/services/generator.service';
 
 const names = ['jacob', 'laura', 'esteban', 'felipe', 'chanci', 'paul'];
 
+
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',

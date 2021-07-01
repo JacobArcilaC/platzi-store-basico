@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+    <mat-form-field>
+        <input type="text" matInput [(ngModel)]="label" (keydown.enter)="addItem()">
+    </mat-form-field>
+<mat-list>
+    <mat-list-item *ngFor="let employee of data;">
+        <h3 matLine>
+           {{employee.label}}
+        </h3>
+        <mat-chip-list>
+            <div class="chip">{{employee.num}}</div>
+        </mat-chip-list>
+        <button mat-raised-button color="warn">
+            <mat-icon onclick="addItem()">delete</mat-icon>
+        </button>
+    </mat-list-item>    
+</mat-list>

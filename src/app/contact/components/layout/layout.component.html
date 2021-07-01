@@ -1,0 +1,10 @@
+<app-list 
+    title="Departamento de ventas" 
+    [data]="salesList"
+    (add)="addItem(salesList, $event)">
+</app-list>
+<app-list 
+    title="Departamento de marketing" 
+    [data]="marketingList"
+    (add)="addItem(marketingList, $event)">
+</app-list>
